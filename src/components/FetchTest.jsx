@@ -1,14 +1,24 @@
+import { useEffect } from "react";
 import PokemonDataStore from "../stores/PokemonDataStore";
 
 export default function FetchTest() {
-  let store = PokemonDataStore();
-  let { pokemon, fetchData, isLoading } = store;
+  const { pokemons, isLoading, error, fetchData } = PokemonDataStore();
+  const endId = 151;
+  const language = "ko";
+
+  useEffect(() => {
+    fetchData(endId, language);
+  }, [fetchData, endId, language]);
+
+  if (isLoading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div>
-      <button onClick={fetchData}>Show id 1 Pokemon</button>
-      {isLoading && <div>Loading...</div>}
-      {pokemon.forms ? <div>it's {pokemon.forms[0].name}</div> : ""}
-    </div>
+    <ul>
+      {pokemons.map((pokemon) => (
+        <li key={pokemon.id}>{pokemon.name}</li>
+      ))}
+    </ul>
   );
 }
