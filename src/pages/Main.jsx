@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import Cards from "../components/Cards";
-import PokemonDataStore from "../stores/PokemonDataStore";
+import usePokemonDataStore from "../hooks/PokemonDataStore";
 
 const endId = 151;
 const language = "ko";
 
 export default function Main() {
-  const { pokemons, isLoading, error, fetchData } = PokemonDataStore();
+  const { pokemons, isLoading, error, fetchData } = usePokemonDataStore();
 
   useEffect(() => {
     fetchData(endId, language);
