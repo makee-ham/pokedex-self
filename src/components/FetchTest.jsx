@@ -1,7 +1,7 @@
 // 데이터 페치 테스트용 컴포넌트로, 서비스 화면에 노출되지 아니함
 
 import { useEffect } from "react";
-import usePokemonDataStore from "../hooks/PokemonDataStore";
+import usePokemonDataStore from "../hooks/usePokemonDataStore";
 
 export default function FetchTest() {
   const { pokemons, isLoading, error, fetchData } = usePokemonDataStore();

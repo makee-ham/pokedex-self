@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Cards from "../components/Cards";
-import usePokemonDataStore from "../hooks/PokemonDataStore";
+import usePokemonDataStore from "../hooks/usePokemonDataStore";
 
 const endId = 151;
 const language = "ko";
