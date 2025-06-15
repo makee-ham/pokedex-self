@@ -10,7 +10,7 @@ export default function Cards({ data }) {
   return (
     <section
       className="flex flex-col items-center w-70 h-75 border"
-      onClick={() => navigate(`detail/${id}`)}
+      onClick={() => navigate(`/detail/${id}`)}
     >
       <p>No. {id}</p>
       <img src={front} alt={name} className="w-55" />
