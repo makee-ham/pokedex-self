@@ -1,3 +1,3 @@
-export default function Datail() {
-  return <div>Datail</div>;
+export default function Detail() {
+  return <div>Detail</div>;
 }
