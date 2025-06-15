@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const PokemonDataStore = create((set) => ({
+const usePokemonDataStore = create((set, get) => ({
   pokemons: [],
   isLoading: false,
   error: null,
@@ -44,6 +44,8 @@ const PokemonDataStore = create((set) => ({
       set({ isLoading: false });
     }
   },
+  getPokemonDetailById: (id) =>
+    get().pokemons.find((pokemon) => pokemon.id === id),
 }));
 
-export default PokemonDataStore;
+export default usePokemonDataStore;
