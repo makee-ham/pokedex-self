@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
-import usePokemonDataStore from "../hooks/PokemonDataStore";
+import usePokemonDataStore from "../hooks/usePokemonDataStore";
 
 export default function Detail() {
   const { id } = useParams();
